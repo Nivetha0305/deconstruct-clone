@@ -12,7 +12,7 @@ export default function Bestseller() {
   return (
       <div>
           <div>
-              <img src={image} className='w-full min-h-full object-cover'/>
+              <img src={image} className='w-full  md:min-h-full object-cover'/>
       </div>
       <div>
         <p className='text-center capitalize pt-10 text-4xl pb-10 font-display'>best sellers</p>
@@ -22,7 +22,7 @@ export default function Bestseller() {
 
 
       {/* Product Grid */}
-      <div className="px-20 grid grid-cols-3 gap-8">
+      <div className="px-20 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Card 1 */}
         <div className="relative border shadow-md group">
           <img

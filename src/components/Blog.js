@@ -7,7 +7,7 @@ export default function Offers() {
             <div className='bg-black text-white capitalize text-3xl mb-20'>
                 <p className='text-center py-20'>Information Over Impulse</p>
 
-                <div className='flex  justify-center space-x-8 py-10 '>
+                <div className='flex  flex-col text-center md:flex-row space-x-0 space-y-5 justify-center md:space-y-0 md:space-x-8 py-10 '>
                     <p className=' hover:underline hover:cursor-pointer'>skin care</p>
                     <p className=' hover:underline hover:cursor-pointer'>Ingredient</p>
                     <p className=' hover:underline hover:cursor-pointer'>lip care</p>
@@ -17,7 +17,7 @@ export default function Offers() {
             </div>
 
 
-            <div className="grid grid-cols-4 gap-10 px-20 mb-16  text-xl font-display  ">
+            <div className="grid md:grid-cols-4 grid-cols-1 gap-10 px-20 mb-16  text-xl font-display  ">
 
                 <div className="text-white bg-black h-80 p-10 flex items-center justify-center rounded-2xl hover:animate-slowbounce hover:shadow-md hover:shadow-black">
                     <span>The ultimate guide to pimple patches</span>

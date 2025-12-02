@@ -29,12 +29,12 @@ export default function Offers() {
 
           </div>
           <div>
-              <p className='text-center font-display capitalize pt-10 text-4xl pb-10'>offers</p>
+              <p className='text-center font-display capitalize pt-10 text-4xl pb-10 md:text-black text-red-700'>offers</p>
 
           </div>
-          <div className="flex  px-10  py-10 gap-8">
+          <div className="flex flex-col md:flex-row  px-10  py-10 gap-8">
               {/* Sidebar */}
-              <div className="w-1/4 flex flex-col gap-12 px-4">
+              <div className="md:w-1/4 w-full flex flex-col gap-12 px-4">
                   <div className="border-t border-zinc-500 pt-7 mt-6">
                       <div className="flex justify-between items-center">
                           <p className="text-xl capitalize tracking-wide">Ingredient</p>
@@ -50,7 +50,7 @@ export default function Offers() {
               </div>
 
               {/* Product Grid */}
-              <div className="w-3/4 grid grid-cols-3 gap-8">
+              <div className="md:w-3/4 w-full grid md:grid-cols-3 grid-cols-1 gap-8">
                   {/* Card 1 */}
                   <div className="relative border shadow-md group">
                       <img

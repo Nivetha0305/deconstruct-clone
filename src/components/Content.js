@@ -16,7 +16,7 @@ export default function () {
                 <p className='text-center pt-10  pb-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black '>Skincare & Haircare Products</p>
             </div>
 
-            <div className="space-x-6 px-16 pb-7 font-display">
+            <div className="flex md:flex-row flex-col md:space-y-0 space-y-5 space-x-0 md:space-x-5 md:px-10 px-4 font-display">
                 <span onClick={()=>navigate('/antiacne')} className="border border-zinc-400 px-2 py-1 rounded-md capitalize cursor-pointer"> anti acne</span>
                 <span onClick={()=>navigate('/antiaging')} className="border border-zinc-400 px-2 py-1 rounded-md capitalize"> anti aging</span>
                 <span className="border border-zinc-400 px-2 py-1 rounded-md capitalize"> brightening</span>

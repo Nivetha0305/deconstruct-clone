@@ -40,9 +40,9 @@ export default function () {
 
 
     return (
-        <div><div className="flex  px-10  py-10 gap-8">
+        <div><div className="flex flex-col md:flex-row px-10  py-10 gap-8">
             {/* Sidebar */}
-            <div className="w-1/4 flex flex-col gap-12 px-4">
+            <div className="md:w-1/4 w-full flex flex-col gap-12 px-4">
                 <div className="border-t border-zinc-500 pt-7 mt-6">
                     <div className="flex justify-between items-center">
                         <p className="text-xl capitalize tracking-wide">Ingredient</p>
@@ -58,7 +58,7 @@ export default function () {
             </div>
 
             {/* Product Grid */}
-            <div className="w-3/4 grid grid-cols-3 gap-8">
+            <div className="md:w-3/4  w-full grid md:grid-cols-3 grid-cols-1 gap-8">
                 {/* Card 1 */}
                 <div className="relative border shadow-md group">
                     <img
@@ -396,9 +396,9 @@ export default function () {
 
         </div>
             
-            <div className='text-center px-28 text-black leading-[40px] tracking-wide py-9 '>
+            <div className='text-center px-28 text-black leading-4 md:leading-[40px] tracking-normal md:tracking-wide py-9 '>
                 <p className='tracking-wider font-bold text-md uppercase '>Caution Notice</p>
-                <p>
+                <p >
                     Deconstruct is committed to your security and satisfaction. We never ask for your OTP, password, or personal details via phone or unsolicited communication.</p>
                 <p className='font-semibold'>If you receive such a request, do not share any information. We also do not require payments for contests, lucky draws, or promotions outside our official platform.</p>
                 <p>For accurate information, refer to our official website or verified social media. This message is for your safety and public interest.</p>
