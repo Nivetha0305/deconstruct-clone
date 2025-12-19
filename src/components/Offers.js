@@ -1,25 +1,28 @@
 import React from 'react'
 import logo from '../assets/down-arrow.png'
  import frontimage from '../assets/frontpage.webp'
-import image from '../assets/vitaminc.webp'
-
-import hoverimage from '../assets/hovervitaminc.webp'
-import image1 from '../assets/sun.webp'
-import hoverimage1 from '../assets/sunscreen.webp'
-import image2 from '../assets/moisturizer.webp'
-import hoverimage2 from '../assets/moist.webp'
+import vitamin from '../assets/vitaminc.webp'
+import vitaminhover from '../assets/hovervitaminc.webp'
 
 
-import image3 from '../assets/antiacne.webp'
-import hoverimage3 from '../assets/antihover.webp'
+import sunscreen from '../assets/sunscreen.webp'
+import sunscreenhover from '../assets/sunscreenhover.webp'
+
+import bright from '../assets/brightfacewash.webp'
+  import brighthover from '../assets/brighthover.webp'
 
 
-import image4 from '../assets/hydrate.webp'
-import hoverimage4 from '../assets/hoverhydrate.webp'
+
+import moisturize from '../assets/moisturizer.webp'
+import moisturizehover from '../assets/moist.webp'
+
+import pore from '../assets/poreserum.webp'
+import porehover from '../assets/porehover.webp'
+
+import hydrate from '../assets/hydrate.webp'
+import hydratehover from '../assets/hoverhydrate.webp'
 
 
-import image5 from '../assets/antiface.webp'
-import hoverimage5 from '../assets/antifacehover.webp'
 export default function Offers() {
   return (
       <div>
@@ -54,11 +57,11 @@ export default function Offers() {
                   {/* Card 1 */}
                   <div className="relative border shadow-md group">
                       <img
-                          src={image}
+                          src={vitamin}
                           className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
                       />
                       <img
-                          src={hoverimage}
+                          src={vitaminhover}
                           className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                       />
                       <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">25% off</span>
@@ -80,11 +83,11 @@ export default function Offers() {
                   {/* Card 2 */}
                   <div className="relative border shadow-md group">
                       <img
-                          src={image1}
+                          src={sunscreen}
                           className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
                       />
                       <img
-                          src={hoverimage1}
+                          src={sunscreenhover}
                           className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                       />
                       <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">25% off</span>
@@ -106,11 +109,11 @@ export default function Offers() {
                   {/* Card 3 */}
                   <div className="relative border shadow-md group">
                       <img
-                          src={image5}
+                          src={bright}
                           className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
                       />
                       <img
-                          src={hoverimage5}
+                          src={brighthover}
                           className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                       />
                       <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">25% off</span>
@@ -136,11 +139,11 @@ export default function Offers() {
                   {/* Row 2: Card 4 */}
                   <div className="relative border shadow-md group">
                       <img
-                          src={image3}
+                          src={pore}
                           className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
                       />
                       <img
-                          src={hoverimage3}
+                          src={porehover}
                           className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                       />
                       <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">25% off</span>
@@ -162,11 +165,11 @@ export default function Offers() {
                   {/* Card 5 */}
                   <div className="relative border shadow-md group">
                       <img
-                          src={image4}
+                          src={hydrate}
                           className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
                       />
                       <img
-                          src={hoverimage4}
+                          src={hydratehover}
                           className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                       />
                       <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">25% off</span>
@@ -189,11 +192,11 @@ export default function Offers() {
                   {/* Card 6 */}
                   <div className="relative border shadow-md group">
                       <img
-                          src={image2}
+                          src={moisturize}
                           className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
                       />
                       <img
-                          src={hoverimage2}
+                          src={moisturizehover}
                           className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                       />
                       <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">25% off</span>

@@ -22,7 +22,7 @@ function App() {
     <div>
 
       {/* Always show Header + Navbar */}
-      
+
       <Header />
       <Navbar />
 
@@ -32,11 +32,11 @@ function App() {
         <Route
           path="/"
           element={
-            <>
-              <Content />
-              <Product />
 
-            </>
+            <Content />
+
+
+
           }
         />
 
@@ -45,9 +45,9 @@ function App() {
         <Route path='/bestsellers' element={<Bestseller />} />
         <Route path='/offers' element={<Offers />} />
         <Route path='/blog' element={<Blog />} />
-        <Route path='/track' element={<Track />}/>
-        
-        <Route path='/antiacne' element={<Anti />} />
+        <Route path='/track' element={<Track />} />
+
+
         {/* Not Found */}
         <Route path="*" element={<h1>Page Not Found</h1>} />
 

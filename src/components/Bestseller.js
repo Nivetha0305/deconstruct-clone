@@ -1,12 +1,18 @@
 import React from 'react'
-import image from '../assets/frontimage.webp'
-import image3 from '../assets/vitaminc.webp'
-import hoverimage from '../assets/hovervitaminc.webp'
-import image1 from '../assets/sun.webp'
-import hoverimage1 from '../assets/sunscreen.webp'
 
-import image5 from '../assets/antiface.webp'
-import hoverimage5 from '../assets/antifacehover.webp'
+
+import image from '../assets/frontimage.webp'
+import vitamin from '../assets/vitaminc.webp'
+import vitaminhover from '../assets/hovervitaminc.webp'
+
+
+
+import sunscreen from '../assets/sunscreen.webp'
+import sunscreenhover from '../assets/sunscreenhover.webp'
+
+
+import brightface from '../assets/brightfacewash.webp'
+import brightfacehover from '../assets/brighthover.webp'
 
 export default function Bestseller() {
   return (
@@ -26,11 +32,11 @@ export default function Bestseller() {
         {/* Card 1 */}
         <div className="relative border shadow-md group">
           <img
-            src={image3}
+            src={vitamin}
             className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
           />
           <img
-            src={hoverimage}
+            src={vitaminhover}
             className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
           />
           <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">25% off</span>
@@ -52,11 +58,11 @@ export default function Bestseller() {
         {/* Card 2 */}
         <div className="relative border shadow-md group">
           <img
-            src={image1}
+            src={sunscreen}
             className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
           />
           <img
-            src={hoverimage1}
+            src={sunscreenhover}
             className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
           />
           <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">25% off</span>
@@ -78,11 +84,11 @@ export default function Bestseller() {
         {/* Card 3 */}
         <div className="relative border shadow-md group">
           <img
-            src={image5}
+            src={brightface}
             className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
           />
           <img
-            src={hoverimage5}
+            src={brightfacehover}
             className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
           />
           <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">25% off</span>

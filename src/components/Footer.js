@@ -13,9 +13,9 @@ export default function Footer() {
         <div>
             <div className='bg-black  '>
                 <div className='flex flex-col md:flex-row text-center  gap-10 px-10 py-20 '>
-                    <div className='md:w-1/5 w-full flex flex-col md:flex-row items-center md:items-start'>
+                    <div className='md:w-1/5 w-full flex flex-col  items-center md:items-start text-center md:text-left'>
                         <img src={image} className=' w-44 h-28 object-contain cursor-pointer' />
-                        <p className='text-white font-display'>Deconstruct offers a wide range of Beginner-friendly highly effective yet gentle skincare products.</p>
+                        <p className='text-white font-display  '>Deconstruct offers a wide range of Beginner-friendly highly effective yet gentle skincare products.</p>
                     </div>
                     <ul className="text-center md:w-1/5 w-full space-y-2 text-white font-display">
                         <li className='pb-10 cursor-pointer md:text-lg text-xl'>About</li>

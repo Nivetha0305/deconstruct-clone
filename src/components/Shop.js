@@ -3,22 +3,17 @@ import image from '../assets/frontimage.webp'
 import image1 from '../assets/down-arrow.png'
 
 
+import bodywash from '../assets/bodywash.webp'
+import bodywashhover from '../assets/bodywashhover.webp'
 
 
+import bodysun from '../assets/bodysun.webp'
+import bodysunhover from '../assets/bodysunhover.webp'
+
+import clear from '../assets/clear.webp'
+import clearhover from '../assets/clearhover.webp'
 
 
-
-import image7 from '../assets/exfoliate.webp'
-import hoverimage7 from '../assets/exfoliatehover.webp'
-
-
-
-import image8 from '../assets/exfoliate1.webp'
-import hoverimage8 from '../assets/hoverexfoliate1.webp'
-
-
-import image9 from '../assets/clearhover.webp'
-import hoverimage9 from '../assets/clear.webp'
 
 export default function Shop() {
   return (
@@ -57,11 +52,11 @@ export default function Shop() {
         <div className="w-3/4 grid grid-cols-3 gap-8">
           <div className="relative border shadow-md group">
             <img
-              src={image7}
+              src={bodywash}
               className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
             />
             <img
-              src={hoverimage7}
+              src={bodywashhover}
               className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
             />
             <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">25% off</span>
@@ -84,11 +79,11 @@ export default function Shop() {
           {/* Card 8 */}
           <div className="relative border shadow-md group">
             <img
-              src={image8}
+              src={bodysun}
               className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
             />
             <img
-              src={hoverimage8}
+              src={bodysunhover}
               className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
             />
             <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">25% off</span>
@@ -110,11 +105,11 @@ export default function Shop() {
           {/* Card 9 */}
           <div className="relative border shadow-md group">
             <img
-              src={image9}
+              src={clear}
               className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
             />
             <img
-              src={hoverimage9}
+              src={clearhover}
               className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
             />
             <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">25% off</span>
