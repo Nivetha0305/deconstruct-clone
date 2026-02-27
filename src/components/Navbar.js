@@ -18,10 +18,11 @@ export default function Header() {
     <header className="w-full border-b border-gray-300 bg-white relative z-50">
       <div className="flex justify-between items-center px-6 py-4">
         {/* Logo */}
+        
         <img
           src={image}
           className="w-36 sm:w-44 object-contain cursor-pointer"
-          alt="logo"
+          alt= "image"
           onClick={() => navigate("/")}
         />
 
