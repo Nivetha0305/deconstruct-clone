@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 
 
 import image from '../assets/frontimage.webp'
@@ -18,7 +18,7 @@ export default function Bestseller() {
   return (
       <div>
           <div>
-              <img src={image} className='w-full  md:min-h-full object-cover'/>
+              <img src={image}  alt="banner" className='w-full  md:min-h-full object-cover'/>
       </div>
       <div>
         <p className='text-center capitalize pt-10 text-4xl pb-10 font-display'>best sellers</p>
@@ -33,10 +33,12 @@ export default function Bestseller() {
         <div className="relative border shadow-md group">
           <img
             src={vitamin}
+            alt='vitamin'
             className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
           />
           <img
             src={vitaminhover}
+            alt='vitaminhoverimage'
             className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
           />
           <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">25% off</span>
@@ -59,10 +61,12 @@ export default function Bestseller() {
         <div className="relative border shadow-md group">
           <img
             src={sunscreen}
+            alt='sunscreenimage'
             className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
           />
           <img
             src={sunscreenhover}
+            alt='sunscreenhoverimage'
             className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
           />
           <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">25% off</span>
@@ -85,10 +89,12 @@ export default function Bestseller() {
         <div className="relative border shadow-md group">
           <img
             src={brightface}
+            alt='brightfaceimage'
             className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
           />
           <img
             src={brightfacehover}
+            alt='brightfacehoverimage'
             className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
           />
           <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">25% off</span>

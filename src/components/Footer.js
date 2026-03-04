@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import image from '../assets/footerlogo.avif'
 import logo from '../assets/facebook.png'
 import insta from '../assets/instagram (1).png'
@@ -14,7 +14,7 @@ export default function Footer() {
             <div className='bg-black  '>
                 <div className='flex flex-col md:flex-row text-center  gap-10 px-10 py-20 '>
                     <div className='md:w-1/5 w-full flex flex-col  items-center md:items-start text-center md:text-left'>
-                        <img src={image} className=' w-44 h-28 object-contain cursor-pointer' />
+                        <img src={image} alt='logo' className=' w-44 h-28 object-contain cursor-pointer' />
                         <p className='text-white font-display  '>Deconstruct offers a wide range of Beginner-friendly highly effective yet gentle skincare products.</p>
                     </div>
                     <ul className="text-center md:w-1/5 w-full space-y-2 text-white font-display">
@@ -51,30 +51,30 @@ export default function Footer() {
                     <div className='text-white md:w-1/5 w-full space-y-2 text-center font-display'>
                         <p className='pb-5 cursor-pointer'>GET IN TOUCH</p>
                         <div className='flex justify-center space-x-6 pb-8 '>
-                            <img src={logo} className='invert brightness-200 h-4 w-7 object-contain cursor-pointer' />
-                            <img src={insta} className='invert brightness-200 h-4 w-7 object-contain cursor-pointer' />
-                            <img src={linked} className='invert brightness-200 h-4 w-7 object-contain cursor-pointer' />
-                            <img src={youtube} className='invert brightness-200 h-4 w-7 object-contain cursor-pointer' />
+                            <img src={logo} alt='face' className='invert brightness-200 h-4 w-7 object-contain cursor-pointer' />
+                            <img src={insta} alt='instaimage'className='invert brightness-200 h-4 w-7 object-contain cursor-pointer' />
+                            <img src={linked} alt='linkimage' className='invert brightness-200 h-4 w-7 object-contain cursor-pointer' />
+                            <img src={youtube} alt='youtubeimage' className='invert brightness-200 h-4 w-7 object-contain cursor-pointer' />
 
 
 
                         </div>
                         <p className=' cursor-pointer'>Address</p>
                         <div className='flex justify-around pb-8' >
-                            <img src={pin} className='invert brightness-200 h-6 w-7 object-contain cursor-pointer' />
+                            <img src={pin} alt='pinimage' className='invert brightness-200 h-6 w-7 object-contain cursor-pointer' />
                             <p className='cursor-pointer'>581, 2nd Floor, 1st Main, 6th Sector, HSR Layout, Bengaluru, Karnataka - 560102</p>
 
                         </div>
                         <p className=''>Email</p>
                         <div className='flex justify-around pb-4'>
-                            <img src={email} className='invert brightness-200 h-5 w-7 object-contain cursor-pointer' />
+                            <img src={email} alt='emailimage' className='invert brightness-200 h-5 w-7 object-contain cursor-pointer' />
 
                             <p className='cursor-pointer'> wecare@thedeconstruct.in</p>
                         </div>
 
                         <p className=''>Phone</p>
                         <div className='flex justify-around pb-8'>
-                            <img src={phone} className='invert brightness-200 h-5 w-7 object-contain cursor-pointer' />
+                            <img src={phone} alt='phoneimage' className='invert brightness-200 h-5 w-7 object-contain cursor-pointer' />
 
                             <p className='cursor-pointer'> 080-471-05772
                                 (Monday - Sunday 10am - 7pm)</p>

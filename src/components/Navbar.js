@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import image from "../assets/logo.webp";
 import logo from "../assets/search.png";
 import login from "../assets/login.png";
@@ -19,10 +19,9 @@ export default function Header() {
       <div className="flex justify-between items-center px-6 py-4">
         {/* Logo */}
         
-        <img
-          src={image}
+        <img src={image}
           className="w-36 sm:w-44 object-contain cursor-pointer"
-          alt= "image"
+          alt= "logo"
           onClick={() => navigate("/")}
         />
 

@@ -1,7 +1,7 @@
 import './App.css';
 import Content from './components/Content';
 import Header from './components/Header';
-import Product from './components/Product';
+// import Product from './components/Product';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import { Routes, Route } from 'react-router-dom';
@@ -15,7 +15,7 @@ import Blog from './components/Blog'
 
 import Track from './components/Track';
 
-import Anti from './components/Anti';
+// import Anti from './components/Anti';
 
 function App() {
   return (

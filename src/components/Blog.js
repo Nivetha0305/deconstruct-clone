@@ -1,5 +1,5 @@
-import React from 'react'
-import logo from '../assets/search.png'
+// import React from 'react'
+// import logo from '../assets/search.png'
 export default function Offers() {
     return (
         <div>
