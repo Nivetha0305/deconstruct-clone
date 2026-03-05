@@ -12,7 +12,7 @@ export default function Bestseller() {
         <img
           src={image}
           alt="banner"
-          className="w-full h-[180px] sm:h-[260px] md:h-[360px] lg:h-[450px] "
+          className="w-full h-[180px] sm:h-[260px] md:h-[360px] lg:h-[450px] aspect-[16/9] object-cover"
         />
       </div>
 
@@ -65,7 +65,9 @@ export default function Bestseller() {
                 {/* Price */}
                 <div className="flex items-center justify-center gap-3  text-sm sm:text-base">
                   <p className="line-through text-gray-400">₹{product.price}</p>
-                  <p className="font-semibold text-black">₹{product.offerPrice}</p>
+                  <p className="font-semibold text-black">
+                    ₹{product.offerPrice}
+                  </p>
                 </div>
 
                 {/* Description */}
