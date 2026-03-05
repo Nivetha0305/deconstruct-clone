@@ -12,7 +12,7 @@ export default function Bestseller() {
         <img
           src={image}
           alt="banner"
-          className="w-full h-[180px] sm:h-[260px] md:h-[360px] lg:h-[450px] aspect-[16/9] object-cover"
+          className="w-full h-[180px] sm:h-[260px] md:h-[360px] lg:h-[450px] "
         />
       </div>
 
