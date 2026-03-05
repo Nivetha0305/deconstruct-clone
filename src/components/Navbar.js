@@ -20,7 +20,7 @@ export default function Header() {
         {/* Logo */}
         
         <img src={image}
-          className="w-36 sm:w-44 object-contain cursor-pointer"
+          className="w-36 sm:w-44  object-contain cursor-pointer"
           alt= "logo"
           onClick={() => navigate("/")}
         />

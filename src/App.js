@@ -14,46 +14,36 @@ import Offers from './components/Offers';
 import Blog from './components/Blog'
 
 import Track from './components/Track';
+import { ProductContext } from './components/ProductContext';
 
 // import Anti from './components/Anti';
 
 function App() {
   return (
-    <div>
+    <ProductContext>
+      <div>
+        {/* Always show Header + Navbar */}
 
-      {/* Always show Header + Navbar */}
+        <Header />
+        <Navbar />
 
-      <Header />
-      <Navbar />
+        <Routes>
+          {/* Home Page */}
+          <Route path="/" element={<Content />} />
 
-      <Routes>
+          {/* Shop Page */}
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/bestsellers" element={<Bestseller />} />
+          <Route path="/offers" element={<Offers />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/track" element={<Track />} />
 
-        {/* Home Page */}
-        <Route
-          path="/"
-          element={
-
-            <Content />
-
-
-
-          }
-        />
-
-        {/* Shop Page */}
-        <Route path="/shop" element={<Shop />} />
-        <Route path='/bestsellers' element={<Bestseller />} />
-        <Route path='/offers' element={<Offers />} />
-        <Route path='/blog' element={<Blog />} />
-        <Route path='/track' element={<Track />} />
-
-
-        {/* Not Found */}
-        <Route path="*" element={<h1>Page Not Found</h1>} />
-
-      </Routes>
-      <Footer />
-    </div>
+          {/* Not Found */}
+          <Route path="*" element={<h1>Page Not Found</h1>} />
+        </Routes>
+        <Footer />
+      </div>
+    </ProductContext>
   );
 }
 
