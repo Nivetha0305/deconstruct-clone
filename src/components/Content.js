@@ -1,993 +1,215 @@
-import  { useState } from 'react';
+import { useContext, useState } from "react";
 
-// Hero and WhatsApp
-import heroImage from '../assets/frontpage.webp';
-import whatsImage from '../assets/whatsapp.webp';
+import heroImage from "../assets/frontpage.webp";
+import whatsImage from "../assets/whatsapp.webp";
+import logoImg from "../assets/down-arrow.png";
 
-
-// antiacne
-import vitamin from '../assets/vitaminc.webp'
-import vitaminhover from '../assets/hovervitaminc.webp'
-
-
-import sunscreen from '../assets/sunscreen.webp'
-import sunscreenhover from '../assets/sunscreenhover.webp'
-
-import bright from '../assets/brightfacewash.webp'
-import brighthover from '../assets/brighthover.webp'
-
-
-// brightening
-
-
-import bodywash from '../assets/bodywash.webp'
-import bodywashhover from '../assets/bodywashhover.webp'
-
-
-import bodysun from '../assets/bodysun.webp'
-import bodysunhover from '../assets/bodysunhover.webp'
-
-import clear from '../assets/clear.webp'
-import clearhover from '../assets/clearhover.webp'
-
-
-
-import moisturizer from '../assets/moist.webp'
-import moisturizerhover from '../assets/moisturizer.webp'
-
-
-import pore from '../assets/poreserum.webp'
-import porehover from '../assets/porehover.webp'
-
-import hydrate from '../assets/hydrate.webp'
-import hydratehover from '../assets/hoverhydrate.webp'
-
-
-
-
-import alphahover from '../assets/alpha.webp'
-import alpha from '../assets/alphahover.webp'
-
-
-
-import acidserum from '../assets/acidserum.webp'
-import acidserumhover from '../assets/acidserumhover.webp'
-
-
-import soothing from '../assets/soothing.webp'
-import soothinghover from '../assets/soothinghover.webp'
-
-
-// ProductJS logo
-import logoImg from '../assets/down-arrow.png';
+import { DataContext } from "./ProductContext";
 
 export default function ProductPage() {
-    const [open, setOpen] = useState('');
+  const [open, setOpen] = useState("all");
 
-    return (
+  const { bestSellerProducts } = useContext(DataContext);
+
+  return (
+    <div>
+      {/* HERO SECTION */}
+
       <div>
-        {/* Hero Section */}
-        <div>
-          <img
-            src={heroImage}
-            alt="Skincare and Haircare Products Banner"
-            className="w-full min-h-full object-cover"
-          />
-        </div>
-
-        {/* Section Title */}
-        <div>
-          <p className="text-center pt-10 pb-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black">
-            Skincare & Haircare Products
-          </p>
-        </div>
-
-        {/* Category Buttons */}
-        <div className="flex md:flex-row flex-col md:space-y-0 space-y-5 space-x-0 md:space-x-5 md:px-10 px-4 font-display">
-          <span
-            className="border border-zinc-400 px-2 py-1 rounded-md capitalize cursor-pointer"
-            onClick={() => setOpen("antiacne")}
-          >
-            {" "}
-            anti-acne
-          </span>
-          <span
-            className="border border-zinc-400 px-2 py-1 rounded-md capitalize cursor-pointer"
-            onClick={() => setOpen("brightening")}
-          >
-            brightening
-          </span>
-          <span
-            className="border border-zinc-400 px-2 py-1 rounded-md capitalize cursor-pointer"
-            onClick={() => setOpen("exfoliating")}
-          >
-            exfoliating
-          </span>
-          <span
-            className="border border-zinc-400 px-2 py-1 rounded-md capitalize cursor-pointer"
-            onClick={() => setOpen("hydrating")}
-          >
-            hydrating
-          </span>
-        </div>
-
-        {/* WhatsApp Button */}
         <img
-          src={whatsImage}
-          alt="WhatsApp Contact Button"
-          className="w-16  h-16 fixed bottom-4 right-10  z-[9999] bg-white rounded-full"
+          src={heroImage}
+          alt="Skincare Banner"
+          className="w-full min-h-full object-cover"
         />
+      </div>
 
-        {/* productjs */}
+      {/* TITLE */}
 
-        <div>
-          <div className="flex flex-col md:flex-row px-10  py-10 gap-8">
-            {/* Sidebar */}
-            <div className="md:w-1/4 w-full flex flex-col gap-12 px-4">
-              <div className="border-t border-zinc-500 pt-7 mt-6">
-                <div className="flex justify-between items-center">
-                  <p className="text-xl capitalize tracking-wide">Ingredient</p>
-                  <img
-                    src={logoImg}
-                    alt="logo"
-                    className="h-6 w-6 object-contain"
-                  />
-                </div>
-              </div>
-              <div className="border-t border-zinc-500 pt-7 mt-6">
-                <div className="flex justify-between items-center">
-                  <p className="text-xl capitalize tracking-wide">Skin Goal</p>
-                  <img
-                    src={logoImg}
-                    alt="logoimage"
-                    className="h-6 w-6 object-contain"
-                  />
-                </div>
-              </div>
-            </div>
+      <div>
+        <p className="text-center pt-10 pb-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black">
+          Skincare & Haircare Products
+        </p>
+      </div>
 
-            {/* Product Grid */}
-            <div className="md:w-3/4  w-full">
-              {open === "" && (
-                <div className="grid md:grid-cols-3 grid-cols-1 gap-8">
-                  {/* Card 1 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={vitamin}
-                      alt="vitamin serum iamge"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={vitaminhover}
-                      alt="vitamin serum hoverimage"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Vitamin C Serum For Face - 10% Vitamin C + 0.5 % Ferulic
-                        Acid | Non-Irritating , Non-Sticky
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹599</p>
-                          <p className="text-right">₹799</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        brightens and evens skin tone
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
+      {/* CATEGORY BUTTONS */}
 
-                  {/* Card 2 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={sunscreen}
-                      alt="sunscreen"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={sunscreenhover}
-                      alt="sunscreenhover "
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Gel Sunscreen for Oily Skin - SPF 55+ and PA+++ | Water
-                        Resistant Sunscreen (50 Gms)
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹349</p>
-                          <p className="text-right">₹262</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        no whitecast, sweat-resistant SPF
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
+      <div className="flex md:flex-row flex-col md:space-y-0 space-y-5 space-x-0 md:space-x-5 md:px-10 px-4 font-display">
+        <span
+          className={`border px-2 py-1 rounded-md capitalize cursor-pointer ${
+            open === "all" ? "bg-black text-white" : "border-zinc-400"
+          }`}
+          onClick={() => setOpen("all")}
+        >
+          all
+        </span>
 
-                  {/* Card 3 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={bright}
-                      alt="bright cream"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={brighthover}
-                      alt="bright creamhover "
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Vitamin C Brightening Face Wash – 0.5% Vitamin C + 2%
-                        Niacinamide | Brightens Dull Skin & Reduce dark spots
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹349</p>
-                          <p className="text-right">₹262</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        Fade Dullness & Dark Spot
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
+        <span
+          className={`border px-2 py-1 rounded-md capitalize cursor-pointer ${
+            open === "antiacne" ? "bg-black text-white" : "border-zinc-400"
+          }`}
+          onClick={() => setOpen("antiacne")}
+        >
+          anti-acne
+        </span>
 
-                  {/* Row 2: Card 4 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={bodysun}
-                      alt="bodysuncreen"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={bodysunhover}
-                      alt="body sunscreen hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Detan Sunscreen Body Lotion - 4% Niacinamide +1% Kojic
-                        Acid Dipalmitate
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹599</p>
-                          <p className="text-right">₹799</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        brightens and evens skin tone
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
+        <span
+          className={`border px-2 py-1 rounded-md capitalize cursor-pointer ${
+            open === "brightening" ? "bg-black text-white" : "border-zinc-400"
+          }`}
+          onClick={() => setOpen("brightening")}
+        >
+          brightening
+        </span>
 
-                  {/* Card 5 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={bodywash}
-                      alt="bodywash "
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={bodywashhover}
-                      alt="bodywashhover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Salicylic Acid Body Wash - 1% salicylic acid + 2%
-                        glycolic acid | Fights body acne
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹349</p>
-                          <p className="text-right">₹279</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        unclog pores & fades body acne
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
-                  {/* Card 6 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={moisturizer}
-                      alt="moisturizer"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={moisturizerhover}
-                      alt="moisturizerhover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Oil-Free Moisturizer for Oily Skin - 3% NMF Complex +
-                        0.2% Panthenol | Non Sticky, Fast absorbing
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹349</p>
-                          <p className="text-right">₹262</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        hydrates and softens skin
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
+        <span
+          className={`border px-2 py-1 rounded-md capitalize cursor-pointer ${
+            open === "exfoliating" ? "bg-black text-white" : "border-zinc-400"
+          }`}
+          onClick={() => setOpen("exfoliating")}
+        >
+          exfoliating
+        </span>
 
-                  {/* card 7 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={pore}
-                      alt="pore removing serum"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={porehover}
-                      alt="pore removing serum hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Salicylic Acid Face Serum for Pore Control - 2%
-                        Salicylic Acid + 3% Niacinamide
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹799</p>
-                          <p className="text-right">₹659</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        reduce pore appearance
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
+        <span
+          className={`border px-2 py-1 rounded-md capitalize cursor-pointer ${
+            open === "hydrating" ? "bg-black text-white" : "border-zinc-400"
+          }`}
+          onClick={() => setOpen("hydrating")}
+        >
+          hydrating
+        </span>
+      </div>
 
-                  {/* Card 8 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={hydrate}
-                      alt="hydrating serum"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={hydratehover}
-                      alt="hydrating serum hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Hyaluronic Acid Hydrating Face Wash - 0.5% Amino Acids +
-                        0.1% Hyaluronic acid
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹299</p>
-                          <p className="text-right">₹232</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        {" "}
-                        Hydrates & Softens, Cleanses Gently
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
+      {/* WHATSAPP BUTTON */}
 
-                  {/* card 9 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={clear}
-                      alt="clearing serum"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={clearhover}
-                      alt="clearing serum hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Niacinamide Face Serum | Fades Dark Spots, Pigmentation,
-                        Tanning
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹549</p>
-                          <p className="text-right">₹462</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        Fade Dullness & Dark Spot
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
+      <img
+        src={whatsImage}
+        alt="whatsapp"
+        className="w-16 h-16 fixed bottom-4 right-10 z-[9999] bg-white rounded-full"
+      />
 
-                  {/* card 10 */}
+      {/* PRODUCT SECTION */}
 
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={alpha}
-                      alt="alpha arbutin serum"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={alphahover}
-                      alt="alpha arbutin serum hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Brightening Niacinamide Serum - 10% Niacinamide + 0.3%
-                        Alpha Arbutin
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹749</p>
-                          <p className="text-right">₹632</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        reduce Pigmentation & evens skin tone
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
+      <div className="flex flex-col md:flex-row px-10 py-10 gap-8">
+        {/* SIDEBAR */}
 
-                  {/* card 11 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={acidserum}
-                      alt="hyaluronic serum"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={acidserumhover}
-                      alt="hyaluronic serum hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        2% Hyaluronic Acid Serum with 1% Niacinamide | Oil Free
-                        Face serum
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹799</p>
-                          <p className="text-right">₹649</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        soothes,hydrates and smoothens
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
+        <div className="md:w-1/4 w-full flex flex-col gap-12 px-4">
+          <div className="border-t border-zinc-500 pt-7 mt-6">
+            <div className="flex justify-between items-center">
+              <p className="text-xl capitalize tracking-wide">Ingredient</p>
 
-                  {/* card 12 */}
-
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={soothing}
-                      alt="soothing serum"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={soothinghover}
-                      alt="soothing serum hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Soothing Cleansing balm - 0.1% bisabolol and 1% Avena
-                        sativa Oil (oats oil)
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹799</p>
-                          <p className="text-right">₹649</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        removes makeup & soothes redness
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Anti-Acne Section */}
-              {open === "antiacne" && (
-                <div className="  grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {/* Card 1 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={vitamin}
-                      alt="vitamin c serum"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={vitaminhover}
-                      alt="vitamin c serum hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Vitamin C Serum For Face - 10% Vitamin C + 0.5% Ferulic
-                        Acid | Non-Irritating, Non-Sticky
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹599</p>
-                          <p className="text-right">₹799</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        brightens and evens skin tone
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Card 2 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={sunscreen}
-                      alt="sunscreen"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={sunscreenhover}
-                      alt="sunscreenhover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Gel Sunscreen for Oily Skin - SPF 55+ and PA+++ | Water
-                        Resistant Sunscreen (50 Gms)
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹349</p>
-                          <p className="text-right">₹262</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        no whitecast, sweat-resistant SPF
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Card 3 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={bright}
-                      alt="bright cream"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={brighthover}
-                      alt="bright cream hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Vitamin C Brightening Face Wash – 0.5% Vitamin C + 2%
-                        Niacinamide | Brightens Dull Skin & Reduce dark spots
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹349</p>
-                          <p className="text-right">₹262</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        Fade Dullness & Dark Spot
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Brightening Section */}
-              {open === "brightening" && (
-                <div className="grid md:grid-cols-3 grid-cols-1  gap-8">
-                  {/* Card 1 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={bodywash}
-                      alt="bodywash"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={bodywashhover}
-                      alt="bodywashhover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Salicylic Acid Body Wash - 1% salicylic acid + 2%
-                        glycolic acid | Fights body acne
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹349</p>
-                          <p className="text-right">₹279</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        unclog pores & fades body acne
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Card 2 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={bodysun}
-                      alt="sunscreen bodylotion"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={bodysunhover}
-                      alt="sunscreen bodylotion hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Detan Sunscreen Body Lotion - 4% Niacinamide +1% Kojic
-                        Acid Dipalmitate
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹449</p>
-                          <p className="text-right">₹362</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        Fades Dark Spots & Brightens Body Skin
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Card 3 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={clear}
-                      alt="clearing serum"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={clearhover}
-                      alt="clearing serum hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Niacinamide Face Serum | Fades Dark Spots, Pigmentation,
-                        Tanning
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹549</p>
-                          <p className="text-right">₹462</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        Fade Dullness & Dark Spot
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {open === "exfoliating" && (
-                <div className="grid md:grid-cols-3 grid-cols-1  gap-8">
-                  {/* card 1 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={moisturizer}
-                      alt="moisturizer serum"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={moisturizerhover}
-                      alt="moisturizer serum hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Oil-Free Moisturizer for Oily Skin - 3% NMF Complex +
-                        0.2% Panthenol | Non Sticky, Fast absorbing
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹349</p>
-                          <p className="text-right">₹262</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        hydrates and softens skin
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* card 2 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={pore}
-                      alt="pore reducing serum"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={porehover}
-                      alt="pore reducing serum hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Salicylic Acid Face Serum for Pore Control - 2%
-                        Salicylic Acid + 3% Niacinamide
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹799</p>
-                          <p className="text-right">₹659</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        reduce pore appearance
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Card 3 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={hydrate}
-                      alt="hydrating serum"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={hydratehover}
-                      alt="hydrating serum hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Hyaluronic Acid Hydrating Face Wash - 0.5% Amino Acids +
-                        0.1% Hyaluronic acid
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹299</p>
-                          <p className="text-right">₹232</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        {" "}
-                        Hydrates & Softens, Cleanses Gently
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {open === "hydrating" && (
-                <div className="grid md:grid-cols-3 grid-cols-1  gap-8">
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={alpha}
-                      alt="alpha arbutin serum"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={alphahover}
-                      alt="alpha arbutin serum hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Brightening Niacinamide Serum - 10% Niacinamide + 0.3%
-                        Alpha Arbutin
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹749</p>
-                          <p className="text-right">₹632</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        reduce Pigmentation & evens skin tone
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* card 11 */}
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={acidserum}
-                      alt="hyaluronic serum"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={acidserumhover}
-                      alt="hyaluronic serum hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        2% Hyaluronic Acid Serum with 1% Niacinamide | Oil Free
-                        Face serum
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹799</p>
-                          <p className="text-right">₹649</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        soothes,hydrates and smoothens
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* card 12 */}
-
-                  <div className="relative border shadow-md group">
-                    <img
-                      src={soothing}
-                      alt="sooting serum"
-                      className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={soothinghover}
-                      alt="sooting serum hover"
-                      className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                    />
-                    <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-                      25% off
-                    </span>
-                    <div className="px-4 py-2">
-                      <p className="py-2">
-                        Soothing Cleansing balm - 0.1% bisabolol and 1% Avena
-                        sativa Oil (oats oil)
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="line-through text-gray-500">₹799</p>
-                          <p className="text-right">₹649</p>
-                        </div>
-                      </p>
-                      <p className="text-center text-gray-500 capitalize pb-2">
-                        removes makeup & soothes redness
-                      </p>
-                      <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              )}
+              <img
+                src={logoImg}
+                alt="logo"
+                className="h-6 w-6 object-contain"
+              />
             </div>
           </div>
 
-          <div className="text-center px-28 text-black leading-4 md:leading-[40px] tracking-normal md:tracking-wide py-9 ">
-            <p className="tracking-wider font-bold text-md uppercase ">
-              Caution Notice
-            </p>
-            <p>
-              Deconstruct is committed to your security and satisfaction. We
-              never ask for your OTP, password, or personal details via phone or
-              unsolicited communication.
-            </p>
-            <p className="font-semibold">
-              If you receive such a request, do not share any information. We
-              also do not require payments for contests, lucky draws, or
-              promotions outside our official platform.
-            </p>
-            <p>
-              For accurate information, refer to our official website or
-              verified social media. This message is for your safety and public
-              interest.
-            </p>
+          <div className="border-t border-zinc-500 pt-7 mt-6">
+            <div className="flex justify-between items-center">
+              <p className="text-xl capitalize tracking-wide">Skin Goal</p>
+
+              <img
+                src={logoImg}
+                alt="logo"
+                className="h-6 w-6 object-contain"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* PRODUCT GRID */}
+
+        <div className="md:w-3/4 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {bestSellerProducts
+              .filter((product) => open === "all" || product.category === open)
+              .map((product) => (
+                <div
+                  key={product.id}
+                  className="relative border shadow-sm hover:-translate-y-2 hover:shadow-xl transition duration-300 overflow-hidden group bg-white"
+                >
+                  {/* productimage */}
+
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-[300px] sm:h-[320px] md:h-[340px] object-cover transition-opacity duration-500 group-hover:opacity-0"
+                    />
+
+                    {/* hoverimage */}
+                    <img
+                      src={product.hover}
+                      alt={product.name}
+                      className="w-full h-[300px] sm:h-[320px] md:h-[340px] object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    />
+                  </div>
+
+                  {/* OFFER  tag*/}
+
+                  <span className="absolute top-0 right-0 text-white bg-black px-3 py-2 text-xs sm:text-sm font-medium">
+                    25% off
+                  </span>
+
+                  {/* PRODUCT DETAILS */}
+
+                  <div className="px-4 py-4">
+                    <p className="text-center text-xs sm:text-sm md:text-base lg:text-xl font-bold  font-display leading-snug line-clamp-2 px-2 py-1">
+                      {product.name}
+                    </p>
+
+                    <p className="text-center text-sm md:text-base font-medium font-display leading-snug line-clamp-2 py-2 ">
+                      {product.productname}
+                    </p>
+
+                    {/* PRICE */}
+
+                    <div className="flex items-center justify-center gap-3  text-sm sm:text-base">
+                      <p className="line-through text-gray-400">
+                        ₹{product.price}
+                      </p>
+
+                      <p className="font-semibold text-black">
+                        ₹{product.offerPrice}
+                      </p>
+                    </div>
+                    {/* description */}
+
+                    <p className="text-center text-gray-500 text-sm mt-2 capitalize">
+                      {product.description}
+                    </p>
+
+                    {/* button */}
+                    <button className="w-full py-2 mt-4 sm:py-3 bg-black text-white uppercase sm:text-sm tracking-wide hover:bg-gray-800 transition">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </div>
-    );
+
+      {/* CAUTION NOTICE */}
+
+      <div className="text-center px-28 text-black leading-6 tracking-wide py-9">
+        <p className="tracking-wider font-bold text-md uppercase">
+          Caution Notice
+        </p>
+
+        <p>
+          Deconstruct is committed to your security and satisfaction. We never
+          ask for OTP, password, or personal details via phone.
+        </p>
+
+        <p className="font-semibold">
+          If you receive such request, do not share any information.
+        </p>
+
+        <p>For accurate information, refer to our official website.</p>
+      </div>
+    </div>
+  );
 }

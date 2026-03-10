@@ -12,7 +12,7 @@ export default function Bestseller() {
         <img
           src={image}
           alt="banner"
-          className="w-full h-[180px] sm:h-[260px] md:h-[360px] lg:h-[450px] "
+          className="w-full  h-[180px] sm:h-[260px] md:h-[360px] lg:h-[450px] "
         />
       </div>
 
@@ -29,7 +29,7 @@ export default function Bestseller() {
           {bestSellerProducts.map((product) => (
             <div
               key={product.id}
-              className="relative border shadow-sm hover:shadow-2xl transition duration-300 overflow-hidden group bg-white"
+              className="relative border shadow-sm hover:-translate-y-2 hover:shadow-xl transition duration-300 overflow-hidden group bg-white"
             >
               {/* productimage */}
               <div className="relative overflow-hidden">
@@ -41,7 +41,7 @@ export default function Bestseller() {
                 />
                 {/* Hover Image */}
                 <img
-                  src={product.hoverImage}
+                  src={product.hover}
                   alt={product.name}
                   className="w-full h-[300px] sm:h-[320px] md:h-[340px] object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 />
@@ -83,6 +83,25 @@ export default function Bestseller() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* CAUTION NOTICE */}
+
+      <div className="text-center px-28 text-black leading-6 tracking-wide py-9">
+        <p className="tracking-wider font-bold text-md uppercase">
+          Caution Notice
+        </p>
+
+        <p>
+          Deconstruct is committed to your security and satisfaction. We never
+          ask for OTP, password, or personal details via phone.
+        </p>
+
+        <p className="font-semibold">
+          If you receive such request, do not share any information.
+        </p>
+
+        <p>For accurate information, refer to our official website.</p>
       </div>
     </div>
   );
