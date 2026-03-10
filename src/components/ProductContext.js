@@ -119,7 +119,7 @@ export function ProductContext({ children }) {
       category: "exfoliating",
       name: "Oil Free Moisturizer",
       price: 262,
-      oldprice: 349,
+     offerPrice: 349,
       productname:
         "   Oil-Free Moisturizer for Oily Skin - 3% NMF Complex +  0.2% Panthenol | Non Sticky, Fast absorbing",
       description:
@@ -133,7 +133,7 @@ export function ProductContext({ children }) {
       category: "exfoliating",
       name: "Salicylic Acid Face Serum",
       price: 659,
-      oldprice: 799,
+      offerPrice: 799,
       productname:
         " Salicylic Acid Face Serum for Pore Control - 2%  Salicylic Acid + 3% Niacinamide",
       description:
@@ -147,7 +147,7 @@ export function ProductContext({ children }) {
       category: "exfoliating",
       name: "Hyaluronic Acid Face Wash",
       price: 232,
-      oldprice: 299,
+      offerPrice: 299,
       productname:
         "  Hyaluronic Acid Hydrating Face Wash - 0.5% Amino Acids +   0.1% Hyaluronic acid",
       description:
@@ -159,9 +159,9 @@ export function ProductContext({ children }) {
     {
       id: 10,
       category: "hydrating",
-      name: "Niacinamide + Alpha Arbutin Serum",
+      name: "Niacinamide  Serum",
       price: 632,
-      oldprice: 749,
+      offerPrice: 749,
       productname:
         "Brightening Niacinamide Serum - 10% Niacinamide + 0.3% Alpha Arbutin",
       description:
@@ -177,7 +177,7 @@ export function ProductContext({ children }) {
       productname:
         "2% Hyaluronic Acid Serum with 1% Niacinamide | Oil Free Face serum",
       price: 649,
-      oldprice: 799,
+      offerPrice: 799,
       description:
         "Deep hydrating serum with hyaluronic acid that smoothens skin.",
       image: acidserum,
@@ -191,7 +191,7 @@ export function ProductContext({ children }) {
       productname:
         "Soothing Cleansing balm - 0.1% bisabolol and 1% Avena sativa Oil (oats oil)",
       price: 649,
-      oldprice: 799,
+      offerPrice: 799,
       description:
         "Makeup removing balm with oat oil that soothes and nourishes skin.",
       image: soothing,
