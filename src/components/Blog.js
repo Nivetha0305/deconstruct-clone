@@ -6,17 +6,18 @@ export default function Offers() {
         <div className="bg-black text-white capitalize text-3xl mb-20">
           <p className="text-center pt-20 mb-10">Information Over Impulse</p>
 
-          {/* Search Box */}
-          <div className="flex justify-center py-6">
-            <div className="flex items-center bg-white rounded-full px-4 py-2  w-[90%] max-w-md  gap-2">
+          <div className="flex justify-center py-6 px-4">
+            <div className="flex items-center bg-white rounded-full px-3 sm:px-4 py-2 w-full max-w-md gap-2 overflow-hidden">
               <input
                 type="text"
-                className="outline-none flex-1 text-black px-2"
+               
+                className="outline-none flex-1 text-black bg-transparent min-w-0"
               />
+
               <img
                 src={logo}
                 alt="search"
-                className="w-5 h-5 cursor-pointer shrink-0"
+                className="w-5 h-5 cursor-pointer flex-shrink-0"
               />
             </div>
           </div>
