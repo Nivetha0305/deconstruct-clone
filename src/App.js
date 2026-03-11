@@ -21,7 +21,7 @@ import { ProductContext } from './components/ProductContext';
 function App() {
   return (
     <ProductContext>
-      <div>
+     
         {/* Always show Header + Navbar */}
 
         <Header />
@@ -42,7 +42,7 @@ function App() {
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
         <Footer />
-      </div>
+      
     </ProductContext>
   );
 }

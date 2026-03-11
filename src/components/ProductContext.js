@@ -148,10 +148,8 @@ export function ProductContext({ children }) {
       name: "Hyaluronic Acid Face Wash",
       price: 232,
       offerPrice: 299,
-      productname:
-        "  Hyaluronic Acid Hydrating Face Wash - 0.5% Amino Acids +   0.1% Hyaluronic acid",
-      description:
-        "Hydrating cleanser with hyaluronic acid that gently cleanses skin.",
+      productname:  "Hyaluronic Acid Hydrating Face Wash - 0.5% Amino Acids + 0.1% Hyaluronic acid",
+      description:  "Hydrating cleanser with hyaluronic acid that gently cleanses skin.",
       image: hydrate,
       hover: hydratehover,
     },
@@ -163,7 +161,7 @@ export function ProductContext({ children }) {
       price: 632,
       offerPrice: 749,
       productname:
-        "Brightening Niacinamide Serum - 10% Niacinamide + 0.3% Alpha Arbutin",
+        "Niacinamide Serum - 10% Niacinamide + 0.3% Alpha Arbutin",
       description:
         "Brightening serum that reduces pigmentation and evens skin tone.",
       image: alpha,

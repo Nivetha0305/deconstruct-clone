@@ -1,21 +1,18 @@
 // import React from 'react'
 import image from '../assets/frontimage.webp'
 import image1 from '../assets/down-arrow.png'
+import { useContext } from 'react';
+import { DataContext } from './ProductContext';
 
 
-import bodywash from '../assets/bodywash.webp'
-import bodywashhover from '../assets/bodywashhover.webp'
 
-
-import bodysun from '../assets/bodysun.webp'
-import bodysunhover from '../assets/bodysunhover.webp'
-
-import clear from '../assets/clear.webp'
-import clearhover from '../assets/clearhover.webp'
 
 
 
 export default function Shop() {
+
+
+  const { bestSellerProducts }=useContext(DataContext)
   return (
     <div>
       {/* banner */}
@@ -57,119 +54,73 @@ export default function Shop() {
           </div>
         </div>
 
-
-        {/* card 7 */}
+        
 
         {/* product grid */}
-        <div className="w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* product card */}
-          <div className="relative border shadow-md group overflow-hidden">
-            <img
-              src={bodywash}
-              alt="bodywash"
-              className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-            />
-            <img
-              src={bodywashhover}
-              alt="bodywashhover"
-              className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-            />
-            <span className="absolute top-0 right-0 text-white bg-black px-4 py-2 text-sm font-medium">
-              25% off
-            </span>
-            <div className="px-4 py-4 text-center">
-              <p className="mb-3">
-                Salicylic Acid Body Wash - 1% salicylic acid + 2% glycolic acid
-                | Fights body acne
-                <div className="flex mb-3 justify-center gap-3">
-                  <p className="line-through text-gray-500">₹349</p>
-                  <p>₹279</p>
+        <div className="md:w-3/4 w-full grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-8">
+          {bestSellerProducts
+           
+            .map((product) => (
+              <div
+                key={product.id}
+                className="relative border shadow-sm hover:-translate-y-2 hover:shadow-xl transition duration-300 overflow-hidden group bg-white"
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-[300px] sm:h-[320px] md:h-[340px] object-cover transition-opacity duration-500 group-hover:opacity-0"
+                  />
+
+                  {/* hoverimage */}
+                  <img
+                    src={product.hover}
+                    alt={product.name}
+                    className="w-full h-[300px] sm:h-[320px] md:h-[340px] object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  />
                 </div>
-              </p>
-              <p className=" text-gray-500 capitalize  text-sm mb-4">
-                unclog pores &fades body acne
-              </p>
-              <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 transition">
-                Add to Cart
-              </button>
-            </div>
-          </div>
 
-          
+                {/* OFFER  tag*/}
 
+                <span className="absolute top-0 right-0 text-white bg-black px-3 py-2 text-xs sm:text-sm font-medium">
+                  25% off
+                </span>
 
+                {/* PRODUCT DETAILS */}
 
-          {/* card 8 */}
-          {/* product card */}
-          <div className="relative border shadow-md group overflow-hidden">
-            <img
-              src={bodysun}
-              alt="bodysun"
-              className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-            />
+                <div className="px-4 py-4">
+                  <p className="text-center text-xs sm:text-sm md:text-base lg:text-xl font-bold  font-display leading-snug line-clamp-2 px-2 py-1">
+                    {product.name}
+                  </p>
 
-            <img
-              src={bodysunhover}
-              alt="bodysunhover"
-              className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-            />
+                  <p className="text-center text-sm md:text-base font-medium font-display leading-snug line-clamp-2 py-2 ">
+                    {product.productname}
+                  </p>
 
-            <span className="absolute top-0 right-0 text-white bg-black px-4 py-2 text-sm font-medium">
-              25% off
-            </span>
+                  {/* PRICE */}
 
-            <div className="px-4 py-4 text-center">
-              <p className="mb-3">
-                Detan Sunscreen Body Lotion - 4% Niacinamide + 1% Kojic Acid
-                Dipalmitate
-              </p>
+                  <div className="flex items-center justify-center gap-3  text-sm sm:text-base">
+                    <p className="line-through text-gray-400">
+                      ₹{product.price}
+                    </p>
 
-              {/* price */}
-              <div className="flex mb-3 justify-center gap-3">
-                <p className="line-through text-gray-500">₹449</p>
-                <p>₹362</p>
+                    <p className="font-semibold text-black">
+                      ₹{product.offerPrice}
+                    </p>
+                  </div>
+                  {/* description */}
+
+                  <p className="text-center text-gray-500 text-sm mt-2 capitalize">
+                    {product.description}
+                  </p>
+
+                  {/* button */}
+                  <button className="w-full py-2 mt-4 sm:py-3 bg-black text-white uppercase sm:text-sm tracking-wide hover:bg-gray-800 transition">
+                    Add to Cart
+                  </button>
+                </div>
               </div>
-
-              <p className="text-gray-500 capitalize text-sm mb-4">
-                Fades Dark Spots & Brightens Body Skin
-              </p>
-
-              <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 transition">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-          {/* Card 9 */}
-          <div className="relative border shadow-md group">
-            <img
-              src={clear}
-              alt="clear"
-              className="w-full h-[380px] object-cover transition-opacity duration-500 group-hover:opacity-0"
-            />
-            <img
-              src={clearhover}
-              alt="clearhover"
-              className="w-full h-[380px] object-cover absolute top-0 left-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-            />
-            <span className="absolute top-0 right-0 text-white bg-black px-6 py-3 text-md font-medium">
-              25% off
-            </span>
-            <div className="px-4 py-2">
-              <p className="py-2">
-                Niacinamide Face Serum | Fades Dark Spots, Pigmentation, Tanning
-                <div className="flex items-center justify-center gap-3">
-                  <p className="line-through text-gray-500">₹549</p>
-                  <p className="text-right">₹462</p>
-                </div>
-              </p>
-              <p className="text-center text-gray-500 capitalize pb-2">
-                Fade Dullness & Dark Spot
-              </p>
-              <button className="py-3 text-white bg-black w-full uppercase text-center hover:bg-gray-800 active:bg-white focus:outline-none">
-                Add to Cart
-              </button>
-            </div>
-          </div>
+            ))}
         </div>
       </div>
 

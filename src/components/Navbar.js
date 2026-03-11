@@ -9,19 +9,39 @@ export default function Header() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
+  const [showSearch, setShowSearch] = useState(false)
+  const[searchTerm,setSearchTerm]=useState("")
+
   const handleNavigate = (path) => {
     navigate(path);
     setOpen(false);
+
+
+
+
   };
+  const handleSearch = () => {
+    if (searchTerm.trim() !== "") {
+      navigate(`/shop?search=${searchTerm}`)
+      setShowSearch(false)
+      setSearchTerm("")
+  }
+}
+
+
+
+
+
 
   return (
     <header className="w-full border-b border-gray-300 bg-white relative z-50">
       <div className="flex justify-between items-center px-6 py-4">
         {/* Logo */}
-        
-        <img src={image}
+
+        <img
+          src={image}
           className="w-36 sm:w-44  object-contain cursor-pointer"
-          alt= "logo"
+          alt="logo"
           onClick={() => navigate("/")}
         />
 
@@ -49,7 +69,12 @@ export default function Header() {
 
         {/* Desktop Icons */}
         <div className="hidden md:flex space-x-6">
-          <img src={logo} className="h-6 w-6 cursor-pointer" alt="search" />
+          <img
+            src={logo}
+            className="h-6 w-6 cursor-pointer"
+            alt="search"
+            onClick={() => setShowSearch(!showSearch)}
+          />
           <img src={login} className="h-6 w-6 cursor-pointer" alt="login" />
           <img src={cart} className="h-6 w-6 cursor-pointer" alt="cart" />
         </div>
@@ -71,6 +96,28 @@ export default function Header() {
           </button>
         </div>
       </div>
+
+      {/* Search Box */}
+      {showSearch && (
+        <div className="flex justify-center py-4 border-t">
+          <div className="flex items-center bg-white rounded-full px-4 py-2 border sm:w-[400px] w-[250px] gap-2">
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="outline-none flex-1 text-black px-2"
+            />
+
+            <img
+              src={logo}
+              alt="search"
+              className="w-5 h-5 cursor-pointer"
+              onClick={handleSearch}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Overlay */}
       {open && (
@@ -117,7 +164,16 @@ export default function Header() {
           </p>
 
           <div className="flex space-x-6 pt-4 border-t">
-            <img src={logo} className="h-6 w-6 cursor-pointer" alt="search" />
+            <img
+              src={logo}
+              className="h-6 w-6 cursor-pointer"
+              alt="search"
+              onClick={() => {
+                setShowSearch(!showSearch);
+                setOpen(false);
+              }}
+            />
+
             <img src={login} className="h-6 w-6 cursor-pointer" alt="login" />
             <img src={cart} className="h-6 w-6 cursor-pointer" alt="cart" />
           </div>
