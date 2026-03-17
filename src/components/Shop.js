@@ -17,10 +17,13 @@ useEffect(() => {
   if (searchValue === "") {
     setFilteredProducts(bestSellerProducts);
   } else {
-    const result = bestSellerProducts.filter((product) =>
-      `${product.name || ""} ${product.category || ""} ${product.description || ""}`
-        .toLowerCase()
-        .includes(searchValue.toLowerCase()),
+    const result = bestSellerProducts.filter(
+      (product) =>
+        product.name?.toLowerCase().includes(searchValue.toLowerCase()) ||
+        product.productname
+          ?.toLowerCase()
+          .includes(searchValue.toLowerCase()) ||
+        product.description?.toLowerCase().includes(searchValue.toLowerCase()),
     );
 
     setFilteredProducts(result);
