@@ -15,13 +15,14 @@ import Blog from './components/Blog'
 
 import Track from './components/Track';
 import { ProductContext } from './components/ProductContext';
+import { CartContext } from './components/CartContext';
 
 // import Anti from './components/Anti';
 
 function App() {
   return (
     <ProductContext>
-     
+      <CartContext>
         {/* Always show Header + Navbar */}
 
         <Header />
@@ -42,7 +43,7 @@ function App() {
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
         <Footer />
-      
+      </CartContext>
     </ProductContext>
   );
 }

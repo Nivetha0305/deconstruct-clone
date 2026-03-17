@@ -4,11 +4,14 @@ import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../components/ProductContext";
 import { useLocation } from "react-router-dom";
+import { CartContext } from "./CartContext";
 
 export default function Shop() {
   const { bestSellerProducts } = useContext(DataContext);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const { addToCart } =useContext(CartContext)
 
 
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -155,7 +158,7 @@ className="outline-none flex-1 px-2 bg-transparent"          />
                   </p>
 
                   {/* button */}
-                  <button className="w-full py-2 mt-4 bg-black text-white uppercase hover:bg-gray-800">
+                  <button onClick={() => addToCart(product)} className="w-full py-2 mt-4 bg-black text-white uppercase hover:bg-gray-800">
                     Add to Cart
                   </button>
                 </div>
