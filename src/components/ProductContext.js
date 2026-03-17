@@ -36,7 +36,7 @@ import soothinghover from "../assets/soothinghover.webp";
 
 export const DataContext = createContext();
 
-export function ProductContext({ children }) {
+export const ProductContext = ({ children }) => {
   const bestSellerProducts = [
     {
       id: 1,

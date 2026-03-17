@@ -14,22 +14,27 @@ export default function Shop() {
   // get search value from URL
   const searchValue = new URLSearchParams(location.search).get("search") || "";
 useEffect(() => {
-  if (searchValue === "") {
+  console.log("Products:", bestSellerProducts);
+  console.log("Search Value:", searchValue);
+
+  if (!searchValue) {
     setFilteredProducts(bestSellerProducts);
-  } else {
-    const result = bestSellerProducts.filter(
-      (product) =>
-        product.name?.toLowerCase().includes(searchValue.toLowerCase()) ||
-        product.productname
-          ?.toLowerCase()
-          .includes(searchValue.toLowerCase()) ||
-        product.description?.toLowerCase().includes(searchValue.toLowerCase()),
-    );
-
-    setFilteredProducts(result);
+    return;
   }
-}, [searchValue, bestSellerProducts]);
 
+  const search = searchValue.toLowerCase();
+
+  const result = bestSellerProducts.filter((product) => {
+    return (
+      product.name?.toLowerCase().includes(search) ||
+      product.productname?.toLowerCase().includes(search)
+    );
+  });
+
+  console.log("Filtered Result:", result);
+
+  setFilteredProducts(result);
+}, [searchValue, bestSellerProducts]);
   return (
     <div>
       {/* banner */}

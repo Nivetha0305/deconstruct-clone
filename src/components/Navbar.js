@@ -16,12 +16,12 @@ export default function Header() {
   //   setOpen(false);
   // };
 
- const handleSearch = () => {
-   if (searchTerm.trim() !== "") {
-     navigate(`/shop?search=${encodeURIComponent(searchTerm)}`);
-     setShowSearch(false);
-   }
- };
+const handleSearch = () => {
+  if (searchTerm.trim() !== "") {
+    navigate(`/shop?search=${encodeURIComponent(searchTerm.toLowerCase())}`);
+    setShowSearch(false);
+  }
+};
 
   return (
     <header className="w-full border-b border-gray-300 bg-white relative z-50">
