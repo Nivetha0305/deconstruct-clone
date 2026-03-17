@@ -8,24 +8,14 @@ import { useNavigate } from "react-router-dom";
 export default function Header() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
-
-  // const handleNavigate = (path) => {
-  //   navigate(path);
-  //   setOpen(false);
-  // };
-
-const handleSearch = () => {
-  if (searchTerm.trim() !== "") {
-    navigate(`/shop?search=${encodeURIComponent(searchTerm.toLowerCase())}`);
-    setShowSearch(false);
-  }
-};
+  
 
   return (
     <header className="w-full border-b border-gray-300 bg-white relative z-50">
       <div className="flex justify-between items-center px-6 py-4">
+
+
+        {/* deconstruct logo */}
         <img
           src={image}
           className="w-36 sm:w-44 cursor-pointer"
@@ -33,6 +23,8 @@ const handleSearch = () => {
           onClick={() => navigate("/")}
         />
 
+        
+        {/* navbar contents */}
         <div className="hidden md:flex items-center space-x-10 uppercase font-display">
           <p onClick={() => navigate("/shop")} className="cursor-pointer">
             shop
@@ -54,23 +46,31 @@ const handleSearch = () => {
           </p>
         </div>
 
+        
+
+
+        {/* icons */}
         <div className="hidden md:flex space-x-6">
           <img
             src={logo}
             alt="logo"
             className="h-6 w-6 cursor-pointer"
-            onClick={() => setShowSearch(!showSearch)}
+            onClick={() => navigate("/shop")}
           />
           <img src={login} alt="login" className="h-6 w-6 cursor-pointer" />
           <img src={cart} alt="cart" className="h-6 w-6 cursor-pointer" />
         </div>
 
+        
+
+
+        {/* mobile responsive */}
         <div className="md:hidden">
           <button onClick={() => setOpen(!open)}>☰</button>
         </div>
       </div>
 
-      {/* Search */}
+      {/* Search
       {showSearch && (
         <div className="flex justify-center py-4 border-t">
           <div className="flex items-center border rounded-full px-4 py-2 w-[250px] sm:w-[400px] font-display">
@@ -94,7 +94,7 @@ const handleSearch = () => {
             />
           </div>
         </div>
-      )}
+      )} */}
     </header>
   );
 }

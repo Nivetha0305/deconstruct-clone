@@ -1,6 +1,6 @@
 import image from "../assets/frontimage.webp";
 import image1 from "../assets/down-arrow.png";
-
+import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../components/ProductContext";
 import { useLocation } from "react-router-dom";
@@ -8,11 +8,23 @@ import { useLocation } from "react-router-dom";
 export default function Shop() {
   const { bestSellerProducts } = useContext(DataContext);
   const location = useLocation();
+  const navigate = useNavigate();
+
 
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   // get search value from URL
-const searchValue = new URLSearchParams(location.search).get("search");
+  const searchValue = new URLSearchParams(location.search).get("search");
+  
+// search handler
+  const [searchInput, setSearchInput] = useState(searchValue || "");
+
+  const handleSearch = () => {
+    navigate(`/shop?search=${searchInput}`);
+  };
+
+
+  // filtering logic
 useEffect(() => {
   if (!bestSellerProducts) return;
 
@@ -31,6 +43,9 @@ useEffect(() => {
 
   setFilteredProducts(result);
 }, [searchValue, bestSellerProducts]);
+  
+  
+  
   return (
     <div>
       {/* banner */}
@@ -48,6 +63,24 @@ useEffect(() => {
           skincare & bodycare
         </p>
       </div>
+
+      
+      {/* search bar */}
+      
+      <div className="flex justify-center pb-6">
+        <div className="flex items-center bg-gray-100 rounded-full px-4 py-2 w-[90%] max-w-md gap-2">
+          <input type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}
+            onKeyDown={(e) => {
+            if(e.key==="Enter")handleSearch()
+            }}
+          placeholder="search products"
+className="outline-none flex-1 px-2 bg-transparent"          />
+          <button onClick={handleSearch}></button>
+        </div>
+      </div>
+
+
+
 
       {/* main section */}
       <div className="flex flex-col lg:flex-row px-6 py-10 lg:px-10 gap-10">
