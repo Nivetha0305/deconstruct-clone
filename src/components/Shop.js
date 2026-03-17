@@ -12,10 +12,9 @@ export default function Shop() {
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   // get search value from URL
-  const searchValue = new URLSearchParams(location.search).get("search") || "";
+const searchValue = new URLSearchParams(location.search).get("search");
 useEffect(() => {
-  console.log("Products:", bestSellerProducts);
-  console.log("Search Value:", searchValue);
+  if (!bestSellerProducts) return;
 
   if (!searchValue) {
     setFilteredProducts(bestSellerProducts);
@@ -24,14 +23,11 @@ useEffect(() => {
 
   const search = searchValue.toLowerCase();
 
-  const result = bestSellerProducts.filter((product) => {
-    return (
-      product.name?.toLowerCase().includes(search) ||
-      product.productname?.toLowerCase().includes(search)
-    );
-  });
-
-  console.log("Filtered Result:", result);
+  const result = bestSellerProducts.filter(
+    (product) =>
+      product.name.toLowerCase().includes(search) ||
+      product.productname.toLowerCase().includes(search),
+  );
 
   setFilteredProducts(result);
 }, [searchValue, bestSellerProducts]);

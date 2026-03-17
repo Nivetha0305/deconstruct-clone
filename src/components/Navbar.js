@@ -33,7 +33,7 @@ const handleSearch = () => {
           onClick={() => navigate("/")}
         />
 
-        <div className="hidden md:flex items-center space-x-10 uppercase">
+        <div className="hidden md:flex items-center space-x-10 uppercase font-display">
           <p onClick={() => navigate("/shop")} className="cursor-pointer">
             shop
           </p>
@@ -56,7 +56,8 @@ const handleSearch = () => {
 
         <div className="hidden md:flex space-x-6">
           <img
-            src={logo} alt="logo"
+            src={logo}
+            alt="logo"
             className="h-6 w-6 cursor-pointer"
             onClick={() => setShowSearch(!showSearch)}
           />
@@ -72,16 +73,22 @@ const handleSearch = () => {
       {/* Search */}
       {showSearch && (
         <div className="flex justify-center py-4 border-t">
-          <div className="flex items-center border rounded-full px-4 py-2 w-[250px] sm:w-[400px]">
+          <div className="flex items-center border rounded-full px-4 py-2 w-[250px] sm:w-[400px] font-display">
             <input
               type="text"
               placeholder="Search..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleSearch();
+                }
+              }}
               className="flex-1 outline-none"
             />
             <img
-              src={logo} alt="logo1"
+              src={logo}
+              alt="logo1"
               className="w-5 h-5 cursor-pointer"
               onClick={handleSearch}
             />
