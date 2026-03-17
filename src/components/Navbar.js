@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import image from "../assets/logo.webp";
 import logo from "../assets/search.png";
 import login from "../assets/login.png";
@@ -8,45 +8,32 @@ import { useNavigate } from "react-router-dom";
 export default function Header() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const [showSearch, setShowSearch] = useState(false)
-  const[searchTerm,setSearchTerm]=useState("")
+  // const handleNavigate = (path) => {
+  //   navigate(path);
+  //   setOpen(false);
+  // };
 
-  const handleNavigate = (path) => {
-    navigate(path);
-    setOpen(false);
-
-
-
-
-  };
   const handleSearch = () => {
     if (searchTerm.trim() !== "") {
-      navigate(`/shop?search=${searchTerm}`)
-      setShowSearch(false)
-      setSearchTerm("")
-  }
-}
-
-
-
-
-
+      navigate(`/shop?search=${searchTerm}`);
+      setShowSearch(false); // optional UX improvement
+    }
+  };
 
   return (
     <header className="w-full border-b border-gray-300 bg-white relative z-50">
       <div className="flex justify-between items-center px-6 py-4">
-        {/* Logo */}
-
         <img
           src={image}
-          className="w-36 sm:w-44  object-contain cursor-pointer"
+          className="w-36 sm:w-44 cursor-pointer"
           alt="logo"
           onClick={() => navigate("/")}
         />
 
-        {/* Desktop Menu  hidden on mobile */}
-        <div className="hidden md:flex items-center space-x-10 font-display text-md uppercase">
+        <div className="hidden md:flex items-center space-x-10 uppercase">
           <p onClick={() => navigate("/shop")} className="cursor-pointer">
             shop
           </p>
@@ -67,118 +54,40 @@ export default function Header() {
           </p>
         </div>
 
-        {/* Desktop Icons */}
         <div className="hidden md:flex space-x-6">
           <img
-            src={logo}
+            src={logo} alt="logo"
             className="h-6 w-6 cursor-pointer"
-            alt="search"
             onClick={() => setShowSearch(!showSearch)}
           />
-          <img src={login} className="h-6 w-6 cursor-pointer" alt="login" />
-          <img src={cart} className="h-6 w-6 cursor-pointer" alt="cart" />
+          <img src={login} alt="login" className="h-6 w-6 cursor-pointer" />
+          <img src={cart} alt="cart" className="h-6 w-6 cursor-pointer" />
         </div>
 
-        {/* Hamburger (Mobile Only) */}
         <div className="md:hidden">
-          <button onClick={() => setOpen(!open)}>
-            <div className="space-y-1">
-              <span
-                className={`block w-6 h-0.5 bg-black transition ${open ? "rotate-45 translate-y-1.5" : ""}`}
-              ></span>
-              <span
-                className={`block w-6 h-0.5 bg-black transition ${open ? "opacity-0" : ""}`}
-              ></span>
-              <span
-                className={`block w-6 h-0.5 bg-black transition ${open ? "-rotate-45 -translate-y-1.5" : ""}`}
-              ></span>
-            </div>
-          </button>
+          <button onClick={() => setOpen(!open)}>☰</button>
         </div>
       </div>
 
-      {/* Search Box */}
+      {/* Search */}
       {showSearch && (
         <div className="flex justify-center py-4 border-t">
-          <div className="flex items-center bg-white rounded-full px-4 py-2 border sm:w-[400px] w-[250px] gap-2">
+          <div className="flex items-center border rounded-full px-4 py-2 w-[250px] sm:w-[400px]">
             <input
               type="text"
-              placeholder="Search products..."
+              placeholder="Search..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="outline-none flex-1 text-black px-2"
+              className="flex-1 outline-none"
             />
-
             <img
-              src={logo}
-              alt="search"
+              src={logo} alt="logo1"
               className="w-5 h-5 cursor-pointer"
               onClick={handleSearch}
             />
           </div>
         </div>
       )}
-
-      {/* Overlay */}
-      {open && (
-        <div
-          className="fixed inset-0 bg-black/30 md:hidden"
-          onClick={() => setOpen(false)}
-        ></div>
-      )}
-
-      {/* Mobile Drawer  */}
-      <div
-        className={`md:hidden fixed top-0 right-0 h-full w-3/4 sm:w-1/2 bg-white shadow-lg transform transition-transform duration-500 ${
-          open ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="flex flex-col p-6 space-y-6 font-display uppercase text-md">
-          <button className="self-end text-xl" onClick={() => setOpen(false)}>
-            ✕
-          </button>
-
-          <p onClick={() => handleNavigate("/shop")} className="cursor-pointer">
-            shop
-          </p>
-          <p
-            onClick={() => handleNavigate("/bestsellers")}
-            className="cursor-pointer"
-          >
-            bestsellers
-          </p>
-          <p
-            onClick={() => handleNavigate("/offers")}
-            className="cursor-pointer"
-          >
-            offers
-          </p>
-          <p onClick={() => handleNavigate("/blog")} className="cursor-pointer">
-            blogs
-          </p>
-          <p
-            onClick={() => handleNavigate("/track")}
-            className="cursor-pointer"
-          >
-            track your order
-          </p>
-
-          <div className="flex space-x-6 pt-4 border-t">
-            <img
-              src={logo}
-              className="h-6 w-6 cursor-pointer"
-              alt="search"
-              onClick={() => {
-                setShowSearch(!showSearch);
-                setOpen(false);
-              }}
-            />
-
-            <img src={login} className="h-6 w-6 cursor-pointer" alt="login" />
-            <img src={cart} className="h-6 w-6 cursor-pointer" alt="cart" />
-          </div>
-        </div>
-      </div>
     </header>
   );
 }

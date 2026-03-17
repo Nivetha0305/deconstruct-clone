@@ -18,7 +18,7 @@ export default function Offers() {
                 src={logo}
                 alt="search"
                 className="w-5 h-5 cursor-pointer flex-shrink-0"
-              />
+              />0
             </div>
           </div>
 
