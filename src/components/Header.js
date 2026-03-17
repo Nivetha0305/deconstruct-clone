@@ -1,12 +1,10 @@
-// import React from 'react'
-// import { useContext } from "react";
-// import { CartContext } from "./CartContext";
+
 
 
 
 export default function Header() {
 
-  // const { cart } =useContext(CartContext)
+  
     return (
       <header className="w-full bg-black text-white">
         <div className="  max-w-[1400px] mx-auto text-center py-3 px-4 font-display">
@@ -18,8 +16,7 @@ export default function Header() {
             No Code Required
           </p>
 
-          {/* Cart Count */}
-         
+        
         </div>
       </header>
     );

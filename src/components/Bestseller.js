@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { DataContext } from "./ProductContext";
 import image from "../assets/frontimage.webp";
+import { CartContext } from "./CartContext";
 
 export default function Bestseller() {
   const { bestSellerProducts } = useContext(DataContext);
-
+ const { addToCart } =useContext(CartContext)
   return (
     <div className="w-full">
       {/* Banner */}
@@ -84,7 +85,10 @@ export default function Bestseller() {
                   </p>
 
                   {/* Button */}
-                  <button className="w-full py-2 mt-4 sm:py-3 bg-black text-white uppercase sm:text-sm tracking-wide hover:bg-gray-800 transition">
+                  <button
+                    className="w-full py-2 mt-4 sm:py-3 bg-black text-white uppercase sm:text-sm tracking-wide hover:bg-gray-800 transition"
+                    onClick={() => addToCart(product)}
+                  >
                     Add to Cart
                   </button>
                 </div>

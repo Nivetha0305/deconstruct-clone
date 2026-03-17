@@ -2,19 +2,25 @@ import { useState } from "react";
 import image from "../assets/logo.webp";
 import logo from "../assets/search.png";
 import login from "../assets/login.png";
-import cart from "../assets/shopping-cart.png";
+import carts from "../assets/shopping-cart.png";
 import { useNavigate } from "react-router-dom";
+
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
 
 export default function Header() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+ 
+
+  // add to cart
+    const { cart } = useContext(CartContext);
+    
   
 
   return (
     <header className="w-full border-b border-gray-300 bg-white relative z-50">
       <div className="flex justify-between items-center px-6 py-4">
-
-
         {/* deconstruct logo */}
         <img
           src={image}
@@ -23,7 +29,6 @@ export default function Header() {
           onClick={() => navigate("/")}
         />
 
-        
         {/* navbar contents */}
         <div className="hidden md:flex items-center space-x-10 uppercase font-display">
           <p onClick={() => navigate("/shop")} className="cursor-pointer">
@@ -46,9 +51,6 @@ export default function Header() {
           </p>
         </div>
 
-        
-
-
         {/* icons */}
         <div className="hidden md:flex space-x-6">
           <img
@@ -58,11 +60,19 @@ export default function Header() {
             onClick={() => navigate("/shop")}
           />
           <img src={login} alt="login" className="h-6 w-6 cursor-pointer" />
-          <img src={cart} alt="cart" className="h-6 w-6 cursor-pointer" />
+
+          {/* Cart */}
+          <div
+            className="relative cursor-pointer"
+            
+          >
+            <img src={carts} alt="cart" className="h-6 w-6 cursor-pointer" onClick={() => navigate("/cart")} />
+            
+            <span className="absolute -top-2 -right-3 bg-red-500 text-xs px-2 rounded-full">
+              {cart.length}
+            </span>
+          </div>
         </div>
-
-        
-
 
         {/* mobile responsive */}
         <div className="md:hidden">
