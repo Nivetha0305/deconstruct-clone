@@ -11,6 +11,8 @@ export default function ProductPage() {
 
   const { bestSellerProducts } = useContext(DataContext);
 
+
+
   return (
     <div>
       {/* HERO SECTION */}
@@ -180,11 +182,14 @@ export default function ProductPage() {
                     <p className="text-center text-gray-500 text-sm mt-2 capitalize">
                       {product.description}
                     </p>
-        
+
                     {/* button */}
-                    <button className="w-full py-2 mt-4 sm:py-3 bg-black text-white uppercase sm:text-sm tracking-wide hover:bg-gray-800 transition">
-                  Add to Cart
-                </button>
+                    <button
+        
+                      className="w-full py-2 mt-4 sm:py-3 bg-black text-white uppercase sm:text-sm tracking-wide hover:bg-gray-800 transition"
+                    >
+                      Add to Cart
+                    </button>
                   </div>
                 </div>
               ))}

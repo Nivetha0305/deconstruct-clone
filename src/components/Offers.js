@@ -9,6 +9,8 @@ export default function Offers() {
 
   const { bestSellerProducts } = useContext(DataContext);
 
+  
+
   return (
     <div>
       <div>
@@ -107,7 +109,8 @@ export default function Offers() {
                   </p>
 
                   {/* button */}
-                  <button className="w-full py-2 mt-4 sm:py-3 bg-black text-white uppercase sm:text-sm tracking-wide hover:bg-gray-800 transition">
+                  <button
+                    className="w-full py-2 mt-4 sm:py-3 bg-black text-white uppercase sm:text-sm tracking-wide hover:bg-gray-800 transition">
                     Add to Cart
                   </button>
                 </div>

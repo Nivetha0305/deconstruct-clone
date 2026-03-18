@@ -5,16 +5,14 @@ import login from "../assets/login.png";
 import carts from "../assets/shopping-cart.png";
 import { useNavigate } from "react-router-dom";
 
-import { useContext } from "react";
-import { CartContext } from "./CartContext";
 
 export default function Header() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
  
 
-  // add to cart
-    const { cart } = useContext(CartContext);
+
+    
     
   
 
@@ -68,9 +66,7 @@ export default function Header() {
           >
             <img src={carts} alt="cart" className="h-6 w-6 cursor-pointer" onClick={() => navigate("/cart")} />
             
-            <span className="absolute -top-2 -right-3 bg-red-500 text-xs px-2 rounded-full">
-              {cart.length}
-            </span>
+          
           </div>
         </div>
 

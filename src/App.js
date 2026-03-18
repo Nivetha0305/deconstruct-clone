@@ -15,14 +15,13 @@ import Blog from './components/Blog'
 import Cart from './components/Cart';
 import Track from './components/Track';
 import { ProductContext } from './components/ProductContext';
-import  CartProvider  from './components/CartContext';
 
 // import Anti from './components/Anti';
 
 function App() {
   return (
     <ProductContext>
-      <CartProvider>
+ 
         {/* Always show Header + Navbar */}
 
         <Header />
@@ -39,13 +38,13 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/track" element={<Track />} />
 
-          <Route path="/cart" element={<Cart />} />
+          {/* <Route path="/cart" element={<Cart />} /> */}
 
           {/* Not Found */}
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
         <Footer />
-      </CartProvider>
+    
     </ProductContext>
   );
 }
