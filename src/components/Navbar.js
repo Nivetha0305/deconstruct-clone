@@ -64,7 +64,7 @@ export default function Header() {
             className="relative cursor-pointer"
             
           >
-            <img src={carts} alt="cart" className="h-6 w-6 cursor-pointer" onClick={() => navigate("/cart")} />
+            <img src={carts} alt="cart" className="h-6 w-6 cursor-pointer"  />
             
           
           </div>

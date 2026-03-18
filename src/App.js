@@ -12,7 +12,7 @@ import Bestseller from './components/Bestseller';
 
 import Offers from './components/Offers';
 import Blog from './components/Blog'
-import Cart from './components/Cart';
+
 import Track from './components/Track';
 import { ProductContext } from './components/ProductContext';
 
